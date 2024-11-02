@@ -4,15 +4,15 @@ from sqlalchemy.orm import (
     mapped_column
 )
 
-from src.data_services.database.models.base import Base
-from src.data_services.database.types import (
+from src.database.models.base import BaseModel
+from src.database.types import (
     int_null_true,
     int_nullable,
     str_nullable
 )
 
 
-class AbstractModel(AsyncAttrs, Base):
+class AbstractModel(AsyncAttrs, BaseModel):
     __tablename__ = "users"
 
     id: Mapped[int] = mapped_column(

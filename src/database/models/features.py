@@ -4,11 +4,11 @@ from sqlalchemy.orm import (
     mapped_column
 )
 
-from src.data_services.database.models.base import Base
-from src.data_services.database.types import str_uniq
+from src.database.models.base import BaseModel
+from src.database.types import str_uniq
 
 
-class AbstractModel(AsyncAttrs, Base):
+class AbstractModel(AsyncAttrs, BaseModel):
     __tablename__ = "features"
 
     id: Mapped[int] = mapped_column(

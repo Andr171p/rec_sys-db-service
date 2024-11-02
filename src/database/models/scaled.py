@@ -4,15 +4,10 @@ from sqlalchemy.orm import (
     mapped_column
 )
 
-from src.data_services.database.models.base import Base
-from src.data_services.database.types import (
-    str_uniq,
-    str_nullable,
-    str_null_true
-)
+from src.database.models.base import BaseModel
 
 
-class AbstractModel(AsyncAttrs, Base):
+class AbstractModel(AsyncAttrs, BaseModel):
     __tablename__ = "scaled"
 
     id: Mapped[int] = mapped_column(
